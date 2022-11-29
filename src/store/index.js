@@ -1,9 +1,14 @@
 import { createStore } from "vuex";
 
-export default createStore({
+import searchCategory from "@/modules/searchCategory";
+import musicApi from "@/modules/musicApi";
+
+const store = createStore({
   state: {},
   getters: {},
   mutations: {},
   actions: {},
-  modules: {},
-});
+  modules: { searchCategory, musicApi },
+})
+
+export default store

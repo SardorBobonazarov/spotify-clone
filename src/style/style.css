@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+}
+nuxt-link, i{
+    cursor: pointer;
+}
+svg{
+    display: inline;
+}
+.notNav{
+    margin-left: 250px;
+    background-color: #111;
+    padding: 8em 5em 0;
+}
+section{
+    position: fixed;
+    top: 0;
+    left: 250px;
+    width: calc(100% - 250px);
+    z-index: 22;
+}
+
+.allMusics{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    justify-content: space-between;
+    column-gap: 20px;
+}
+.allMusics h1{
+    font-size: 2.4em;
+    font-weight: 900;
+}

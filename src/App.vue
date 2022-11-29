@@ -1,30 +1,40 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <component :is="layout">
+    <router-view></router-view>
+  </component>
 </template>
 
+<script>
+// import { computed } from '@vue/reactivity';
+// import { useRoute } from 'vue-router';
+import AuthLayoutVue from './layout/AuthLayout.vue';
+import MainLayoutVue from './layout/MainLayout.vue';
+import SearchLayoutVue from './layout/SearchLayout.vue';
+import GenreLayoutVue from './layout/GenreLayout.vue';
+
+// const route = useRoute()
+
+// const layout = computed(() => {
+//   return route.meta.layout || 'auth' + '-layout'
+// })
+
+// console.log(layout);
+
+export default{
+  components: {
+    AuthLayoutVue,
+    MainLayoutVue,
+    SearchLayoutVue,
+    GenreLayoutVue
+  },
+  computed: {
+    layout(){
+      return (this.$route.meta.layout || 'auth') + 'LayoutVue'
+    }
+  }
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
